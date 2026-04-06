@@ -27,8 +27,8 @@ RUN rm -rf /usr/share/nginx/html/*
 # Copy build files from previous stage
 COPY --from=build /app/dist /usr/share/nginx/html
 
-# Copy custom nginx config (optional, enables SPA routing)
-COPY visit-tracker-ui/nginx.conf /etc/nginx/conf.d/default.conf
+# Copy custom nginx config (SPA routing)
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
